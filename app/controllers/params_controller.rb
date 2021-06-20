@@ -5,13 +5,17 @@ class ParamsController < ApplicationController
   end
 
   def seg_cap
-    phrase = params["response"]
+    phrase = params["phrase"].upcase
     render json: { message: "The url segment is #{phrase}" }
   end
 
-  # def segment_params
-  #   phrase = params["this_is_a_key"]
-  #   render json: { message: "The url segment is #{phrase}" }
+  # def body_params
+  #   phrase = params["phrase"]
+  #   render json: { message: "The body all caps phrase is #{phrase}" }
   # end
 
+  def body_params
+    input_value = params["secret_info"]
+    render json: { message: "The secret info is #{input_value}" }
+  end
 end

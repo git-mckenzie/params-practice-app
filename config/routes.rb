@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   get "/query_params" => "params#capitalize"
 
   get "/segment_params/:phrase" => "params#seg_cap"
+
+  post "/body_params" => "params#body_params"
 end
